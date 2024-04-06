@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Account;
 use Illuminate\Http\Request;
 
 class SystemAdminController extends Controller
@@ -11,6 +12,10 @@ class SystemAdminController extends Controller
     {
         $activeUserCount = User::where('status', 'active')->count();
         $inactiveUserCount = User::where('status', 'disabled')->count();
+        $acc_success =  Account::where('is_active', 1)->count();
+        $acc_pending =  Account::where('is_active', 0)->count();
+        $acc_rejected =  Account::where('is_active', 3)->count();
+        $acc_partiallyapproved =  Account::where('is_active', 4)->count();
 
         $data = [
             "username" => "esb",
@@ -19,12 +24,10 @@ class SystemAdminController extends Controller
             "processingCode" => "900000"
         ];
         $post = json_encode($data);
-        $results = json_decode(curl($data));
-
-
+        // $results = json_decode(curl($data));
         // dd($results);
 
-        return view('dashboard', compact('activeUserCount', 'inactiveUserCount', 'results'));
+        return view('dashboard', compact('activeUserCount', 'inactiveUserCount', 'acc_success', 'acc_pending', 'acc_rejected', 'acc_partiallyapproved'));
     }
 
     /**

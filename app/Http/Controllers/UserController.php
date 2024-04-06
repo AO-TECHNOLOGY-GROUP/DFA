@@ -41,7 +41,7 @@ class UserController extends Controller
         if (user()->role === 'super-admin') {
             $roles = Role::all();
         } else {
-            $roles = Role::where('name', '!=', 'super-admin')->get();
+            $roles = Role::where('role_name', '!=', 'super-admin')->get();
         }
 
         return $roles;

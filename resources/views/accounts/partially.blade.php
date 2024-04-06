@@ -55,7 +55,7 @@
                                         <td>{{ ucwords($account->idNumber) }}</td>
                                         <td>{{ ucwords($account->accountType) }}</td>
                                         <td>{{ ucwords($account->nationality) }}</td>
-                                        <td>{{ ucwords($account->gender) }}</td>
+                                        <td>{{ ucwords($account->gender) }}</td>    
                                         <td>{{ ucwords($account->phoneNumber) }}</td>
                                         <td>{{ ucwords($account->email) }}</td>
                                         <td>{{ ucwords($account->tinNo) }}</td>

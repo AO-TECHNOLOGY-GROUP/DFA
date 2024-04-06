@@ -65,14 +65,14 @@
                     </li>
 
 
-                    @else
+                   
                     <li>
                         <a href="{{ route('account.pending-accounts') }}">
                             <i data-feather="archive"></i>
                             <span> New Accounts </span>
                         </a>
                     </li>
-
+                    @else
 
                     @endif
                       <li>
@@ -91,14 +91,14 @@
                         </a>
                     </li>
 
-                    @else
+                   
                      <li>
                         <a href="{{ route('loan.new') }}">
                             <i data-feather="book-open"></i>
                             <span> New Applications </span>
                         </a>
                     </li>
-
+                    @else
 
                     @endif
 
@@ -123,7 +123,6 @@
             @if (auth()->user()->type == 'super-admin')
 
 
-                @canany(['create_users','view_users', 'manage_users', 'show_user', 'verify_user', 'restore_user'])
                     <li class="menu-title">System Users</li>
 
                     <li>
@@ -132,8 +131,7 @@
                             <span> Users </span>
                         </a>
                     </li>
-                @endcan
-                  @canany(['create_users','view_users', 'manage_users', 'show_user', 'verify_user', 'restore_user'])
+            
                     <li class="menu-title">Relationship Managers</li>
 
                     <li>
@@ -142,9 +140,7 @@
                             <span> List </span>
                         </a>
                     </li>
-                @endcan
-
-                @canany(['view_configs','view_roles', 'view_permissions'])
+              
                     <li class="menu-title">System Configurations</li>
 
                     <li>
@@ -173,7 +169,6 @@
                             </li>
                         </ul>
                     </li>
-                @endcanany
             @else
 
             @endif

@@ -119,7 +119,8 @@ if (!function_exists('image')) {
 if (!function_exists('curl')) {
     function curl($data)
     {
-        $url = config('app.endpoint_url');
+        // $url = env('app.endpoint_url');
+        $url = env('ENDPOINT_URL');
         //$url = 'http://127.0.0.1:8190/channelinterface/req';
 
         $ch = curl_init($url);
@@ -519,7 +520,7 @@ if (!function_exists('maskString')) {
 
         $array = str_split($s);
 
-        $end = strlen($s) < $end ? strlen($s) : $end ?: strlen($s);
+        $end = (strlen($s) < $end ? strlen($s) : $end) ?: strlen($s);
 
         for ($start; $start < $end; $start++) {
             $array[$start] = $char;

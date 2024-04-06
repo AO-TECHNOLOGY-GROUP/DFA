@@ -109,6 +109,7 @@ class AuthController extends Controller
             'ref' => 'required',
             'otp' => 'required'
         ]);
+     
 
         $user = User::all()->where('uuid', $request->get('uuid'))->first();
 

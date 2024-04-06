@@ -6,11 +6,11 @@
             <nav aria-label="breadcrumb" class="float-right mt-1">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page"><a href="">RM Management</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="">Agent Management</a></li>
                     {{-- <li class="breadcrumb-item active" aria-current="page">User Management</li> --}}
                 </ol>
             </nav>
-            <h4 class="mb-1 mt-0">RM</h4>
+            <h4 class="mb-1 mt-0">AGENT</h4>
         </div>
     </div>
 @endsection
@@ -23,14 +23,14 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-6">
-                            <h4 class="header-title mt-0 mb-1">RM Management</h4>
+                            <h4 class="header-title mt-0 mb-1">Agent Management</h4>
                         </div>
                         <div class="col-lg-6">
                             @can('create_users')
                                 <a href="{{ route('users.create-rms') }}"
-                                    class="btn btn-sm btn-soft-primary float-right  mr-2" data-toggle="tooltip"
+                                    class="btn btn-primary btn-lg float-right  mr-2" data-toggle="tooltip"
                                     data-placement="top" title="Add User">
-                                    <i class="uil uil-plus"> Add RM</i>
+                                    <i class="uil uil-plus"> Add Agent</i>
                                 </a>
                             @endcan
                         </div>

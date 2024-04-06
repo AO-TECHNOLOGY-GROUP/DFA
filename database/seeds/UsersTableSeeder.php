@@ -29,6 +29,22 @@ class UsersTableSeeder extends Seeder
         $superAdmin->assignRole(['super-admin']);
         $superAdmin->givePermissionTo((Permission::all('name')->toArray()));
 
+        $superAdmin = User::create([
+            'first_name' => 'Isaac',
+            'last_name' => 'Mungai',
+            'email' => 'isaacmungaik97@gmail.com',
+            'phone_number' => '254713197824',
+            'email_verified_at' => now(),
+            'phone_verified_at' => now(),
+            'password' => 'admin@123',
+            'type' => 'super-admin',
+            'creator_id' => 777,
+            'verifier_id' => 777
+        ]);
+
+        $superAdmin->assignRole(['super-admin']);
+        $superAdmin->givePermissionTo((Permission::all('name')->toArray()));
+
         $admin = User::create([
             'first_name' => 'Ephantus',
             'last_name' => 'Okumu',

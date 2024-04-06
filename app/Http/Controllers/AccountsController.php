@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class AccountsController extends Controller
-{
+{ 
     public function getAccountsSuccessful(){
 
         $active = 1;
@@ -41,7 +41,9 @@ class AccountsController extends Controller
             "status" => "$active"
         ];
         $post = json_encode($data);
+        // dd($post);
         $results = json_decode(curl($data));
+
 
         // dd($results);
 
@@ -65,6 +67,7 @@ class AccountsController extends Controller
         ];
         $post = json_encode($data);
         $results = json_decode(curl($data));
+        // dd($results);
 
 
         if ($results->response == '000') {

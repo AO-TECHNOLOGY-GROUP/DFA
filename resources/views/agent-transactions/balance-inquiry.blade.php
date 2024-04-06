@@ -14,8 +14,7 @@
     </div>
 @endsection
 
-@section('content')
-    <div class="row">
+@section('content
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-body">

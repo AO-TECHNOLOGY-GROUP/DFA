@@ -159,6 +159,7 @@ class LoansController extends Controller
         ];
         $post = json_encode($data);
         $results = json_decode(curl($data));
+
         if ($results->response == '000') {
             $data = $results->data;
             return view('loans.partially-approved', compact('data'));

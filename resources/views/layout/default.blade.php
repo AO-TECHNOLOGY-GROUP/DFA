@@ -15,13 +15,14 @@
 
                 @yield('breadcrumb')
                 @yield('content')
+                
             </div>
         </div>
 
         @include('partials.footer')
     </div>
 </div>
-
+@yield('script')
 @include('partials.footer-script')
 </body>
 
